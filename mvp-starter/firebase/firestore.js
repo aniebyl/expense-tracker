@@ -81,6 +81,6 @@ export function updateReceipt(docID, uid, date, locationName, address, items, am
   });
 }
 
-export function deleteReceipt(docID) {
-  deleteDoc(doc(db, RECEIPTS_COLLECTION, docID));
+export function deleteReceipt(id) {
+  deleteDoc(doc(db, RECEIPTS_COLLECTION, id));
 }

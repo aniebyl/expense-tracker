@@ -40,12 +40,11 @@ export async function replaceImage(image, bucket) {
   await uploadBytes(ref(storage, bucket), image);
 }
 
-// Deletes existing image in storage
-export async function deleteImage(bucket) {
-  await deleteObject(ref(storage, bucket));
-}
-
 // Gets the download URL from the reference URL
 export async function getDownloadURL(bucket) {
   return await getStorageDownloadURL(ref(storage, bucket));
+}
+
+export function deleteImage(bucket) {
+  return deleteObject(ref(storage, bucket));
 }
